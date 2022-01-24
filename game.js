@@ -50,9 +50,18 @@ function checkAnswer(currentLevel){
   if(gamePattern[currentLevel]===userClickedPattern[currentLevel]){
     console.log("success")
     if(userClickedPattern.length===gamePattern.length){
-      setTimeout(function(){
-        nextSequence();
-      },1000);
+      if(gamePattern.length == 8){
+        $("body").addClass("game-won");
+        $("#level-title").text("CONGRATULATION! You won the Game, press any key to restart.");
+        setTimeout(function(){
+          $("body").removeClass("game-won");
+        },200);
+        startOver();
+      }else{
+        setTimeout(function(){
+          nextSequence();
+        },1000);
+      }
     }
   }else{
     console.log("wrong");
