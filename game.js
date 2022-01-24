@@ -50,7 +50,7 @@ function checkAnswer(currentLevel){
   if(gamePattern[currentLevel]===userClickedPattern[currentLevel]){
     console.log("success")
     if(userClickedPattern.length===gamePattern.length){
-      if(gamePattern.length == 8){
+      if(gamePattern.length == 20){
         $("body").addClass("game-won");
         $("#level-title").text("CONGRATULATION! You won the Game, press any key to restart.");
         setTimeout(function(){
