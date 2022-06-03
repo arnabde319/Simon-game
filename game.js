@@ -25,7 +25,7 @@ $(".btn").click(function(){
   checkAnswer(userClickedPattern.length-1);
 });
 
-$(document).keypress(function(){
+$("#level-title").click(function(){
   if(!started){
     $("#level-title").text("Level "+level);
     nextSequence();
@@ -52,7 +52,7 @@ function checkAnswer(currentLevel){
     if(userClickedPattern.length===gamePattern.length){
       if(gamePattern.length == 20){
         $("body").addClass("game-won");
-        $("#level-title").text("CONGRATULATION! You won the Game, press any key to restart.");
+        $("#level-title").text("CONGRATULATION! You won the Game, click me to restart.");
         setTimeout(function(){
           $("body").removeClass("game-won");
         },200);
@@ -67,7 +67,7 @@ function checkAnswer(currentLevel){
     console.log("wrong");
     playSound("wrong");
     $("body").addClass("game-over");
-    $("#level-title").text("Game over, press any key to restart.");
+    $("#level-title").text("Game over, click me to restart.");
 
     setTimeout(function(){
       $("body").removeClass("game-over");
